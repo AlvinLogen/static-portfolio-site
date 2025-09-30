@@ -1,6 +1,9 @@
 #Other Files
 README_DEV.md
 
+# Node
+node_modules/
+
 # Logs
 logs
 *.log
