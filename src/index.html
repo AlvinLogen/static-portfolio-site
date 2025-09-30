@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solution Architect Journey - Transitioning to a Professional Architect">
+    <meta name="keywords" content="solutions architect, node.js., t-sql, python, engineering">
+    <title>My Architect Portfolio</title>'
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-brand">My Solution Architect Journey</h1>
+                <button class="nav-toggle" id="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-section="äbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>B.Com Honours in Information Systems, TOGAF 9.0 Certified, transforming into a Solutions
+                            Architect through hands-on learning and professional development practices.</p>
+                        <p>This portfolio documents my 12-month journey from technical / business systems specialist to
+                            full-stack solutions architect, focusing on modern technologies and industry best practices.
+                        </p>
+                    </div>
+                    <div class="stats-container" id="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="4">0</span>
+                            <span class="stat-label">Active Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="12">0</span>
+                            <span class="stat-label">Weeks of Learning</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">Hours Committed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Current Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card" data-tech="nodejs">
+                        <div class="project-header">
+                            <h3>Node.js API Starter</h3>
+                            <span class="project-status status-active">Active</span>
+                        </div>
+                        <p class="project description">
+                            Professional API template with comprehensive testing, CI/CD pipeline, and production-ready architecture patterns.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Jest</span>
+                            <span class="tech-tag">Github Actions</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="75"></div>
+                            </div>
+                            <span class="progress-text">75% Complete</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Code</a>
+                            <a href="#" class="btn btn-secondary">Live Demo</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tech="sql">
+                        <div class="project-header">
+                            <h3>T-SQL Performance Lab</h3>
+                            <span class="project-status status-active">Active</span>
+                        </div>
+                        <p class="project description">
+                            Query optimization and execution plan analysis with performance benchmarking and indexing strategies.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">T-SQL</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Performance Tuning</span>
+                            <span class="tech-tag">Execution Plans</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="60"></div>
+                            </div>
+                            <span class="progress-text">60% Complete</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Code</a>
+                            <a href="#" class="btn btn-secondary">Performance Reports</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tech="nodejs">
+                        <div class="project-header">
+                            <h3>Python Automation Suite</h3>
+                            <span class="project-status status-planning">Planning</span>
+                        </div>
+                        <p class="project description">
+                            Professional Python applications with comprehensive testing, data validation, and automated workflow solutions.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Pytest</span>
+                            <span class="tech-tag">Pydantic</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="25"></div>
+                            </div>
+                            <span class="progress-text">25% Complete</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Code</a>
+                            <a href="#" class="btn btn-secondary">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-filter">
+                    <h3>Filter by Technology:</h3>
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">NodeJs</button>
+                    <button class="filter-btn">SQL</button>
+                    <button class="filter-btn">Python</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h2 class="section-title">Skills in Development</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js & Express</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="75"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                           <div class="skill-item">
+                                <span class="skill-name">Resftul APIs</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="70"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                           <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="65"></div>
+                                </div>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Database & Performance</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">T-SQL & Database Design</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="80"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                           <div class="skill-item">
+                                <span class="skill-name">Query Optimization</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="75"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                           <div class="skill-item">
+                                <span class="skill-name">Execution Plan Analysis</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="70"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Development Practices</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Testing (Unit & Integration)</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="70"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                           <div class="skill-item">
+                                <span class="skill-name">CI/CD with Github Actions</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="65"></div>
+                                </div>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                           <div class="skill-item">
+                                <span class="skill-name">Clean Architecture</span>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-skill="60"></div>
+                                </div>
+                                <span class="skill-percentage">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>Interested in following my journey or discussing solutions architecture? Feel free to reach out!</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <span class="contact-icon">💼</span>
+                                <span class="contact-text">Professional Portfolio</span>
+                            </div>
+                            <div class="contact-method">
+                                <span class="contact-icon">🔗</span>
+                                <span class="contact-text">GitHub Projects</span>
+                            </div>
+                            <div class="contact-method">
+                                <span class="contact-icon">📝</span>
+                                <span class="contact-text">Technical Blog</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-status" id="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 - My Engineering Journey | Solution Architect Development Path</p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="theme-toggle" id="theme-toggle">
+        <button id="theme-button" aria-label="Toggle dark mode"></button>
+    </div>
+</body>
+
+</html>
