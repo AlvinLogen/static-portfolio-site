@@ -53,10 +53,10 @@ const PortfolioApp = {
     bindNavigationEvents() {
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-        const navLinks = document.getElementById('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link');
 
         //Mobile Menu Toggle
-        if (navToggle & navMenu){
+        if (navToggle && navMenu){
             navToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.toggleMobileMenu();

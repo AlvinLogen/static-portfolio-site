@@ -8,3 +8,9 @@ const localStorageMock = {
 };
 
 global.localStorage = localStorageMock;
+
+//Mock window.scrollTo
+global.scrollTo = jest.fn();
+
+//Mock requestAnimationFrame
+global.requestAnimationFrame = (cb) => setTimeout(cb, 0);
