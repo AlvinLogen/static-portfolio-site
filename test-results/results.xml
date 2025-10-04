@@ -1,0 +1,192 @@
+<testsuites id="" name="" tests="75" failures="0" skipped="5" errors="0" time="41.644742">
+<testsuite name="portfolio.spec.js" timestamp="2025-10-04T22:26:27.790Z" hostname="chromium" tests="15" failures="0" skipped="1" time="28.708" errors="0">
+<testcase name="Portfolio Website E2E Tests › should load homepage correctly" classname="portfolio.spec.js" time="1.114">
+</testcase>
+<testcase name="Navigation › Should Navigate between sections smoothly" classname="portfolio.spec.js" time="2.795">
+</testcase>
+<testcase name="Navigation › Should highlight active navigation item" classname="portfolio.spec.js" time="1.241">
+</testcase>
+<testcase name="Navigation › Should work on mobile devices" classname="portfolio.spec.js" time="1.384">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Theme functionality › Should toggle between light and dark themes" classname="portfolio.spec.js" time="1.245">
+</testcase>
+<testcase name="Theme functionality › Should persist theme preference" classname="portfolio.spec.js" time="1.271">
+</testcase>
+<testcase name="Contact Form › Should validate form inputs" classname="portfolio.spec.js" time="2.298">
+</testcase>
+<testcase name="Contact Form › Should submit valid form succesfully" classname="portfolio.spec.js" time="4.009">
+</testcase>
+<testcase name="Contact Form › Should show real-time validation" classname="portfolio.spec.js" time="1.087">
+</testcase>
+<testcase name="Project Filtering › Should filter projects by technology" classname="portfolio.spec.js" time="1.556">
+</testcase>
+<testcase name="Performance › Should load quickly" classname="portfolio.spec.js" time="1.559">
+</testcase>
+<testcase name="Performance › Should be responsive" classname="portfolio.spec.js" time="1.16">
+</testcase>
+<testcase name="Accessibility › Should have proper keyboard navigation" classname="portfolio.spec.js" time="1.028">
+</testcase>
+<testcase name="Accessibility › Should have proper ARIA attributes" classname="portfolio.spec.js" time="0.976">
+</testcase>
+<testcase name="Visual Regression › Should match visual snapshots" classname="portfolio.spec.js" time="5.985">
+</testcase>
+</testsuite>
+<testsuite name="portfolio.spec.js" timestamp="2025-10-04T22:26:27.790Z" hostname="firefox" tests="15" failures="0" skipped="1" time="36.303" errors="0">
+<testcase name="Portfolio Website E2E Tests › should load homepage correctly" classname="portfolio.spec.js" time="1.829">
+</testcase>
+<testcase name="Navigation › Should Navigate between sections smoothly" classname="portfolio.spec.js" time="3.683">
+</testcase>
+<testcase name="Navigation › Should highlight active navigation item" classname="portfolio.spec.js" time="3.401">
+</testcase>
+<testcase name="Navigation › Should work on mobile devices" classname="portfolio.spec.js" time="2.174">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Theme functionality › Should toggle between light and dark themes" classname="portfolio.spec.js" time="2.525">
+</testcase>
+<testcase name="Theme functionality › Should persist theme preference" classname="portfolio.spec.js" time="1.457">
+</testcase>
+<testcase name="Contact Form › Should validate form inputs" classname="portfolio.spec.js" time="2.423">
+</testcase>
+<testcase name="Contact Form › Should submit valid form succesfully" classname="portfolio.spec.js" time="4.099">
+</testcase>
+<testcase name="Contact Form › Should show real-time validation" classname="portfolio.spec.js" time="2.117">
+</testcase>
+<testcase name="Project Filtering › Should filter projects by technology" classname="portfolio.spec.js" time="1.504">
+</testcase>
+<testcase name="Performance › Should load quickly" classname="portfolio.spec.js" time="1.487">
+</testcase>
+<testcase name="Performance › Should be responsive" classname="portfolio.spec.js" time="1.903">
+</testcase>
+<testcase name="Accessibility › Should have proper keyboard navigation" classname="portfolio.spec.js" time="0.909">
+</testcase>
+<testcase name="Accessibility › Should have proper ARIA attributes" classname="portfolio.spec.js" time="0.918">
+</testcase>
+<testcase name="Visual Regression › Should match visual snapshots" classname="portfolio.spec.js" time="5.874">
+</testcase>
+</testsuite>
+<testsuite name="portfolio.spec.js" timestamp="2025-10-04T22:26:27.790Z" hostname="webkit" tests="15" failures="0" skipped="1" time="39.844" errors="0">
+<testcase name="Portfolio Website E2E Tests › should load homepage correctly" classname="portfolio.spec.js" time="1.398">
+</testcase>
+<testcase name="Navigation › Should Navigate between sections smoothly" classname="portfolio.spec.js" time="3.108">
+</testcase>
+<testcase name="Navigation › Should highlight active navigation item" classname="portfolio.spec.js" time="1.571">
+</testcase>
+<testcase name="Navigation › Should work on mobile devices" classname="portfolio.spec.js" time="1.453">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Theme functionality › Should toggle between light and dark themes" classname="portfolio.spec.js" time="1.898">
+</testcase>
+<testcase name="Theme functionality › Should persist theme preference" classname="portfolio.spec.js" time="1.724">
+</testcase>
+<testcase name="Contact Form › Should validate form inputs" classname="portfolio.spec.js" time="3.531">
+</testcase>
+<testcase name="Contact Form › Should submit valid form succesfully" classname="portfolio.spec.js" time="5.91">
+</testcase>
+<testcase name="Contact Form › Should show real-time validation" classname="portfolio.spec.js" time="1.314">
+</testcase>
+<testcase name="Project Filtering › Should filter projects by technology" classname="portfolio.spec.js" time="2.068">
+</testcase>
+<testcase name="Performance › Should load quickly" classname="portfolio.spec.js" time="1.994">
+</testcase>
+<testcase name="Performance › Should be responsive" classname="portfolio.spec.js" time="1.972">
+</testcase>
+<testcase name="Accessibility › Should have proper keyboard navigation" classname="portfolio.spec.js" time="1.455">
+</testcase>
+<testcase name="Accessibility › Should have proper ARIA attributes" classname="portfolio.spec.js" time="1.533">
+</testcase>
+<testcase name="Visual Regression › Should match visual snapshots" classname="portfolio.spec.js" time="8.915">
+</testcase>
+</testsuite>
+<testsuite name="portfolio.spec.js" timestamp="2025-10-04T22:26:27.790Z" hostname="Mobile Chrome" tests="15" failures="0" skipped="1" time="29.687" errors="0">
+<testcase name="Portfolio Website E2E Tests › should load homepage correctly" classname="portfolio.spec.js" time="1.29">
+</testcase>
+<testcase name="Navigation › Should Navigate between sections smoothly" classname="portfolio.spec.js" time="3.224">
+</testcase>
+<testcase name="Navigation › Should highlight active navigation item" classname="portfolio.spec.js" time="1.195">
+</testcase>
+<testcase name="Navigation › Should work on mobile devices" classname="portfolio.spec.js" time="1.245">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Theme functionality › Should toggle between light and dark themes" classname="portfolio.spec.js" time="1.166">
+</testcase>
+<testcase name="Theme functionality › Should persist theme preference" classname="portfolio.spec.js" time="1.176">
+</testcase>
+<testcase name="Contact Form › Should validate form inputs" classname="portfolio.spec.js" time="2.327">
+</testcase>
+<testcase name="Contact Form › Should submit valid form succesfully" classname="portfolio.spec.js" time="4.091">
+</testcase>
+<testcase name="Contact Form › Should show real-time validation" classname="portfolio.spec.js" time="1.157">
+</testcase>
+<testcase name="Project Filtering › Should filter projects by technology" classname="portfolio.spec.js" time="1.605">
+</testcase>
+<testcase name="Performance › Should load quickly" classname="portfolio.spec.js" time="1.548">
+</testcase>
+<testcase name="Performance › Should be responsive" classname="portfolio.spec.js" time="1.576">
+</testcase>
+<testcase name="Accessibility › Should have proper keyboard navigation" classname="portfolio.spec.js" time="1.061">
+</testcase>
+<testcase name="Accessibility › Should have proper ARIA attributes" classname="portfolio.spec.js" time="1.043">
+</testcase>
+<testcase name="Visual Regression › Should match visual snapshots" classname="portfolio.spec.js" time="5.983">
+</testcase>
+</testsuite>
+<testsuite name="portfolio.spec.js" timestamp="2025-10-04T22:26:27.790Z" hostname="Mobile Safari" tests="15" failures="0" skipped="1" time="35.968" errors="0">
+<testcase name="Portfolio Website E2E Tests › should load homepage correctly" classname="portfolio.spec.js" time="1.363">
+</testcase>
+<testcase name="Navigation › Should Navigate between sections smoothly" classname="portfolio.spec.js" time="3.007">
+</testcase>
+<testcase name="Navigation › Should highlight active navigation item" classname="portfolio.spec.js" time="1.558">
+</testcase>
+<testcase name="Navigation › Should work on mobile devices" classname="portfolio.spec.js" time="1.44">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Theme functionality › Should toggle between light and dark themes" classname="portfolio.spec.js" time="1.555">
+</testcase>
+<testcase name="Theme functionality › Should persist theme preference" classname="portfolio.spec.js" time="1.521">
+</testcase>
+<testcase name="Contact Form › Should validate form inputs" classname="portfolio.spec.js" time="3.798">
+</testcase>
+<testcase name="Contact Form › Should submit valid form succesfully" classname="portfolio.spec.js" time="4.498">
+</testcase>
+<testcase name="Contact Form › Should show real-time validation" classname="portfolio.spec.js" time="1.446">
+</testcase>
+<testcase name="Project Filtering › Should filter projects by technology" classname="portfolio.spec.js" time="1.872">
+</testcase>
+<testcase name="Performance › Should load quickly" classname="portfolio.spec.js" time="1.797">
+</testcase>
+<testcase name="Performance › Should be responsive" classname="portfolio.spec.js" time="2.317">
+</testcase>
+<testcase name="Accessibility › Should have proper keyboard navigation" classname="portfolio.spec.js" time="1.359">
+</testcase>
+<testcase name="Accessibility › Should have proper ARIA attributes" classname="portfolio.spec.js" time="1.293">
+</testcase>
+<testcase name="Visual Regression › Should match visual snapshots" classname="portfolio.spec.js" time="7.144">
+</testcase>
+</testsuite>
+</testsuites>

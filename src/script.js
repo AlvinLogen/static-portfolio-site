@@ -48,7 +48,7 @@ const PortfolioApp = {
         //Smooth Scrolling
         this.bindSmoothScrolling();
     },
-    
+
     //Navigation Event handlers
     bindNavigationEvents() {
         const navToggle = document.getElementById('nav-toggle');
@@ -56,7 +56,7 @@ const PortfolioApp = {
         const navLinks = document.querySelectorAll('.nav-link');
 
         //Mobile Menu Toggle
-        if (navToggle && navMenu){
+        if (navToggle && navMenu) {
             navToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.toggleMobileMenu();
@@ -77,7 +77,7 @@ const PortfolioApp = {
 
         //Close Mobile Menu When Clicking outside
         document.addEventListener('click', (e) => {
-            if (this.state.isMenuOpen && !navToggle.contains(e.target) && !navMenu.contains(e.target)){
+            if (this.state.isMenuOpen && !navToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 this.closeMobileMenu();
             }
         });
@@ -88,9 +88,15 @@ const PortfolioApp = {
         const navMenu = document.getElementById('nav-menu');
         const navToggle = document.getElementById('nav-toggle');
 
+        //Null Checks
+        if (!navMenu || !navToggle) {
+            console.warn('Navigation elements not found');
+            return;
+        }
+
         this.state.isMenuOpen = !this.state.isMenuOpen;
 
-        if(this.state.isMenuOpen){
+        if (this.state.isMenuOpen) {
             navMenu.classList.add('active');
             navToggle.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -101,14 +107,14 @@ const PortfolioApp = {
         }
     },
 
-    closeMobileMenu(){
-        if (this.state.isMenuOpen){
+    closeMobileMenu() {
+        if (this.state.isMenuOpen) {
             this.toggleMobileMenu();
         }
     },
 
     //Navigation and scrolling
-    navigateToSection(sectionId){
+    navigateToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (!section) return;
 
@@ -126,11 +132,11 @@ const PortfolioApp = {
         this.saveUserPreference('lastSection', sectionId);
     },
 
-    updateActiveNavLink(activeId){
+    updateActiveNavLink(activeId) {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if(link.getAttribute('data-section') === activeId){
+            if (link.getAttribute('data-section') === activeId) {
                 link.classList.add('active')
             }
         });
@@ -154,7 +160,7 @@ const PortfolioApp = {
 
         //Visual Effects
         const button = document.getElementById('theme-button');
-        if(button) {
+        if (button) {
             button.style.transform = 'scale(0.9)';
             setTimeout(() => {
                 button.style.transform = '';
@@ -170,7 +176,7 @@ const PortfolioApp = {
         document.documentElement.setAttribute('data-theme', this.state.currentTheme);
 
         const themeButton = document.getElementById('theme-button');
-        if(themeButton) {
+        if (themeButton) {
             themeButton.textContent = this.state.currentTheme === 'light' ? '🌙' : '☀️';
         }
     },
@@ -211,21 +217,23 @@ const PortfolioApp = {
         //Remove existing error message
         const existingError = field.parentNode.querySelectorAll('.error-message');
 
-        if(existingError) {
-            existingError.remove();
+        if (existingError) {
+            if (existingError.parentNode) {
+                existingError.parentNode.removeChild(existingError);
+            }
         }
 
         //Validation Rules
-        switch (field.type){
+        switch (field.type) {
             case 'email':
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if(!emailRegex.test(value)){
+                if (!emailRegex.test(value)) {
                     isValid = false;
                     errorMessage = 'Please enter a valid email address';
                 }
                 break;
             case 'text':
-                if (value.length < 2){
+                if (value.length < 2) {
                     isValid = false;
                     errorMessage = 'Thjis field must be at least 2 characters long';
                 }
@@ -238,7 +246,7 @@ const PortfolioApp = {
         }
 
         //Apply validation styles and messages
-        if(isValid) {
+        if (isValid) {
             field.classList.remove('invalid');
             field.classList.add('valid');
         } else {
@@ -255,15 +263,15 @@ const PortfolioApp = {
         return isValid;
     },
 
-    clearValidation(field){
+    clearValidation(field) {
         field.classList.remove('valid', 'invalid');
         const errorMessage = field.parentNode.querySelector('.error-message');
-        if(errorMessage) {
+        if (errorMessage) {
             errorMessage.remove();
         }
     },
 
-    handleFormSubmit(form){
+    handleFormSubmit(form) {
         const formData = new FormData(form);
         const formStatus = document.getElementById('form-status');
 
@@ -272,12 +280,12 @@ const PortfolioApp = {
         let isFormValid = true;
 
         inputs.forEach(input => {
-            if (!this.validateField(input)){
+            if (!this.validateField(input)) {
                 isFormValid = false
             }
         });
 
-        if (!isFormValid){
+        if (!isFormValid) {
             this.showFormStatus('Please correct the errors above', 'error');
             return;
         }
@@ -299,14 +307,14 @@ const PortfolioApp = {
 
     showFormStatus(message, type) {
         const formStatus = document.getElementById('form-status');
-        if(!formStatus) return;
+        if (!formStatus) return;
 
         formStatus.textContent = message;
         formStatus.className = `form-status ${type}`;
         formStatus.style.display = 'block';
 
         //Auto-hide success/error message
-        if(type !== 'info'){
+        if (type !== 'info') {
             setTimeout(() => {
                 formStatus.style.display = 'none';
             }, 5000);
@@ -314,7 +322,7 @@ const PortfolioApp = {
     },
 
     //Project Filtering
-    bindProjectFiltering(){
+    bindProjectFiltering() {
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -332,7 +340,7 @@ const PortfolioApp = {
         });
     },
 
-    filterProjects(filter, projectCards){
+    filterProjects(filter, projectCards) {
         projectCards.forEach((card, index) => {
             const cardTech = card.getAttribute('data-tech');
             const shouldShow = filter === 'all' || cardTech === filter;
@@ -348,12 +356,12 @@ const PortfolioApp = {
     },
 
     //Window event handlers
-    bindWindowEvents(){
+    bindWindowEvents() {
         //Scroll handling with throttling
         let scrollTimeout;
 
         window.addEventListener('scroll', () => {
-            if (scrollTimeout){
+            if (scrollTimeout) {
                 clearTimeout(scrollTimeout);
             }
 
@@ -365,7 +373,7 @@ const PortfolioApp = {
         //Resize handling
         let resizeTimout;
         window.addEventListener('resize', () => {
-            if (resizeTimout){
+            if (resizeTimout) {
                 clearTimeout(resizeTimout);
             }
 
@@ -375,7 +383,7 @@ const PortfolioApp = {
         });
     },
 
-    handleScroll(){
+    handleScroll() {
         //Update activate navigation based on scroll position
         const sections = document.querySelectorAll('.section');
         const scrollPosition = window.scrollY + this.config.scrollOffset;
@@ -384,9 +392,9 @@ const PortfolioApp = {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
 
-            if(scrollPosition >= sectionTop && scrollPosition < sectionBottom){
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 const sectionId = section.getAttribute('id');
-                if(sectionId !== this.state.activeSection){
+                if (sectionId !== this.state.activeSection) {
                     this.updateActiveNavLink(sectionId);
                     this.state.activeSection = sectionId;
                 }
@@ -394,57 +402,57 @@ const PortfolioApp = {
         });
     },
 
-    handleResize(){
+    handleResize() {
         //Close mobile menu on resize to desktop
-        if (window.innerWidth > 768 && this.state.isMenuOpen){
+        if (window.innerWidth > 768 && this.state.isMenuOpen) {
             this.closeMobileMenu();
         }
     },
 
     //Smooth scrolling for anchor links
-    bindSmoothScrolling(){
+    bindSmoothScrolling() {
         const links = document.querySelectorAll('a[href^="#"]');
 
         links.forEach(link => {
-           link.addEventListener('click', (e) => {
+            link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 if (href === '#') return;
 
                 const targetId = href.substring(1);
                 const target = document.getElementById(targetId);
 
-                if(target) {
+                if (target) {
                     e.preventDefault();
                     this.navigateToSection(targetId);
                 }
-           }); 
+            });
         });
     },
 
     //Animation initialization
-    initializeAnimations(){
+    initializeAnimations() {
         //Animate Progress bars when in view
         setTimeout(() => {
             this.animateProgressBar();
-        },this.config.progressAnimationDelay);
+        }, this.config.progressAnimationDelay);
 
         //Animate Counters
         this.animateCounters();
     },
 
-    animateProgressBar(){
+    animateProgressBar() {
         const progressBars = document.querySelectorAll('.progress-fill, .skill-bar');
 
         progressBars.forEach(bar => {
             const progress = bar.getAttribute('data-progress') || bar.getAttribute('data-skill');
-            if(progress) {
+            if (progress) {
                 bar.style.setProperty('--progress-width', `${progress}%`);
                 bar.classList.add('animate');
             }
         });
     },
 
-    animateCounters(){
+    animateCounters() {
         const counters = document.querySelectorAll('.stat-number');
 
         counters.forEach(counter => {
@@ -455,10 +463,10 @@ const PortfolioApp = {
 
             const updateCounter = () => {
                 current += increment;
-                if(current < target){
+                if (current < target) {
                     counter.textContent = Math.floor(current);
                     requestAnimationFrame(updateCounter);
-                }else {
+                } else {
                     counter.textContent = target;
                 }
             };
@@ -471,7 +479,7 @@ const PortfolioApp = {
     },
 
     //Intersection Observer for scroll-triggered animations
-    setupIntersectionObserver(){
+    setupIntersectionObserver() {
         const observerOptions = {
             root: null,
             rootMargin: '0px 0px -100px 0px',
@@ -480,10 +488,10 @@ const PortfolioApp = {
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting){
+                if (entry.isIntersecting) {
                     const elementId = entry.target.id;
 
-                    if(!this.state.animationsTriggered.has(elementId)){
+                    if (!this.state.animationsTriggered.has(elementId)) {
                         this.triggerSectionAnimation(entry.target);
                         this.state.animationsTriggered.add(elementId);
                     }
@@ -497,7 +505,7 @@ const PortfolioApp = {
         });
     },
 
-    triggerSectionAnimation(section){
+    triggerSectionAnimation(section) {
         const sectionId = section.id;
 
         //Add fade-in animation
@@ -514,22 +522,22 @@ const PortfolioApp = {
     },
 
     //User preferences management
-    loadUserPreferences(){
+    loadUserPreferences() {
         const lastSection = this.state.userPreferences.lastSection;
-        if(lastSection && document.getElementById(lastSection)){
+        if (lastSection && document.getElementById(lastSection)) {
             this.navigateToSection(lastSection);
         }
     },
 
-    saveUserPreference(key, value){
+    saveUserPreference(key, value) {
         this.state.userPreferences[key] = value;
         localStorage.setItem('userPreferences', JSON.stringify(this.state.userPreferences));
     },
 
     //Utility Methods
-    debounce(func, wait){
+    debounce(func, wait) {
         let timeout;
-        return function executeFunction(...args){
+        return function executeFunction(...args) {
             const later = () => {
                 clearTimeout(timeout);
                 func(...args);
@@ -539,13 +547,13 @@ const PortfolioApp = {
             timeout = setTimeout(later, wait);
         };
     },
-    
-    throttle(func, limit){
+
+    throttle(func, limit) {
         let inThrottle;
-        return function(){
+        return function () {
             const args = arguments;
             const context = this;
-            if(!inThrottle){
+            if (!inThrottle) {
                 func.apply(context, args);
                 inThrottle = true;
                 setTimeout(() => inThrottle = false, limit);
@@ -560,6 +568,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Export for testing (if in module environment)
-if (typeof module !== 'undefined' && module.exports){
+if (typeof module !== 'undefined' && module.exports) {
     module.exports = PortfolioApp;
 }

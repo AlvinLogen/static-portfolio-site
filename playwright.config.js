@@ -1,7 +1,7 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-    testDir: './test/e2e',
+    testDir: './tests/e2e',
     fullyParallel: true,
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
@@ -42,7 +42,7 @@ module.exports = defineConfig({
     ],
 
     webServer: {
-        command: 'npm run serve',
+        command: 'npm start',
         port: 3000,
         reuseExistingServer: !process.env.CI,
     },

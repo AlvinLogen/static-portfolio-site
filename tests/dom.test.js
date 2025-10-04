@@ -1,28 +1,37 @@
 //Mock HTML structure for testing
-document.body.innerHTML = `
-    <div id="theme-button>☀️</div>
-    <nav id="nav-menu" class="nav-menu">
-        <a href="#" class="nav-link" data-section="about">About</a>
-        <a href="#" class="nav-link" data-section="projects">Projects</a>
-    </nav>
-    <button id="nav-toggle">Menu</button>
-    <form id="contact-form">
-        <input type="text" name="name" required>
-        <input type="email" name="email" required>
-        <textarea name="message" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-    <div id="form-status">       
-    </nav>
-`;
-
 describe('Portfolio DOM Interactions', () => {
     let PortfolioApp;
 
     beforeEach(() => {
-        //Reset mocks
+        // Reset DOM for each test
+        document.body.innerHTML = `
+            <div id="theme-button">☀️</div>
+            <nav id="nav-menu" class="nav-menu">
+                <a href="#" class="nav-link" data-section="about">About</a>
+                <a href="#" class="nav-link" data-section="projects">Projects</a>
+            </nav>
+            <button id="nav-toggle">Menu</button>
+            <form id="contact-form">
+                <input type="text" name="name" required>
+                <input type="email" name="email" required>
+                <textarea name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="form-status">
+            </div>
+        `;
+
         jest.clearAllMocks();
-        localStorage.getItem.mockReturnValue(null);
+
+        Object.defineProperty(window, 'localStorage', {
+            value: {
+                getItem: jest.fn(() => null),
+                setItem: jest.fn(),
+                removeItem: jest.fn(),
+                clear: jest.fn()
+            },
+            writable: true
+        });
 
         //Mock Module Imporrt
         PortfolioApp = require('../src/script.js');
@@ -35,7 +44,7 @@ describe('Portfolio DOM Interactions', () => {
             PortfolioApp.toggleTheme();
 
             expect(PortfolioApp.state.currentTheme).not.toBe(initialTheme);
-            expect(localStorage.setItem).toHaveBeenCalledWith(
+            expect(window.localStorage.setItem).toHaveBeenCalledWith(
                 'theme',
                 PortfolioApp.state.currentTheme
             );
@@ -60,13 +69,17 @@ describe('Portfolio DOM Interactions', () => {
 
         test('Should handle mobile menu toggle', () => {
             const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+
+            expect(PortfolioApp.state.isMenuOpen).toBe(false);
 
             PortfolioApp.toggleMobileMenu();
+
             expect(navMenu.classList.contains('active')).toBe(true);
             expect(PortfolioApp.state.isMenuOpen).toBe(true);
 
             PortfolioApp.toggleMobileMenu();
-            expect(navMenu.classList.contains('active')).toBe(true);
+            expect(navMenu.classList.contains('active')).toBe(false);
             expect(PortfolioApp.state.isMenuOpen).toBe(false);
         });
     }); 
@@ -90,8 +103,8 @@ describe('Portfolio DOM Interactions', () => {
 
         test('Should handle form submission with validation', () => {
             const form = document.getElementById('contact-form');
-            const nameInput = form.querySelector('input[type="name"]');
-            const emailInput = form.querySelector('input[type="email"]');
+            const nameInput = form.querySelector('input[name="name"]');
+            const emailInput = form.querySelector('input[name="email"]');
             const messageInput = form.querySelector('textarea[name="message"]');
 
             //Set invalid values
@@ -126,13 +139,15 @@ describe('Portfolio DOM Interactions', () => {
     });
 
     describe('Animation Control', () => {
-        test('Should animate progress bar', () => {
-            document.body.innerHTML = `
+        test('Should animate progress bar', async () => {
+            document.body.innerHTML += `
                 <div class="progress-fill" data-progress="75"></div>
                 <div class="skill-bar" data-skill="90"></div>
             `;
 
-            PortfolioApp.animateProgressBars();
+            PortfolioApp.initializeAnimations();
+
+            await new Promise(resolve => setTimeout(resolve, PortfolioApp.config.progressAnimationDelay + 50))
 
             const progressBar = document.querySelector('.progress-fill');
             const skillBar = document.querySelector('.skill-bar');
@@ -158,7 +173,7 @@ describe('Portfolio DOM Interactions', () => {
 
     describe('User Preferences', () => {
         test('Should save and load user preferences', () => {
-            PortfolioApp.saveUserPreferences('lastSection', 'projects');
+            PortfolioApp.saveUserPreference('lastSection', 'projects');
 
             expect(localStorage.setItem).toHaveBeenCalledWith(
                 'userPreferences',
